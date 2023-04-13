@@ -1,13 +1,16 @@
+import React from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Main from "./components/Main";
 
-function App() {
-
+const App = () => {
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+      <Header />
+      <Main />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
