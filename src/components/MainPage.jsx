@@ -72,17 +72,19 @@ function MainPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="bg-red-500 text-white p-4">
-        <div className="flex justify-between items-center">
-          <div>
-            <h1 className="font-bold text-2xl">Pizza Shop</h1>
-            <p className="text-sm">Delicious pizzas delivered to you</p>
+      <header className="bg-red-500 text-white p-4 h-52">
+        <div className="flex justify-around items-center">
+          <div className="">
+            <h1 className="font-bold text-7xl">Pizza Place</h1>
+            <p className="text-md text-right mt-3 font-extralight italic text-red-200">
+              Delicious pizzas delivered to you.
+            </p>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-6">
             <SortingDropDown sortBy={sortBy} setSortBy={setSortBy} />
             <button
               onClick={() => setShowVegOnly(!showVegOnly)}
-              className="p-2 rounded-full bg-white text-red-500"
+              className="p-2 rounded-full bg-white text-red-500 mt-32"
             >
               {showVegOnly ? (
                 <Emoji symbol="🥬" label="veggie" />
