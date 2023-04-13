@@ -26,11 +26,14 @@ function PizzaCard({ pizza, onSelectPizza }) {
       <img src={pizza.img_url} alt={pizza.name} className="w-full mb-4" />
       <h2 className="text-lg font-bold">{pizza.name}</h2>
       <p className="text-gray-600">{pizza.description}</p>
-      <div className="flex justify-between items-center mt-4">
+      <div className="flex flex-wrap justify-between items-center mt-4">
         <div>
           {starRating}
           <span className="ml-2">{pizza.rating}</span>
         </div>
+
+        <div className="font-bold text-red-500">₹{pizza.price}</div>
+
         <button
           onClick={handleCustomizeClick}
           className="px-4 py-2 rounded-full bg-red-500 text-white"
