@@ -6,7 +6,7 @@ import SortingDropDown from "./SortingDropDown";
 import CustomizePopup from "./CustomizePopup";
 import Toppings from "./Toppings";
 
-function Main() {
+function MainPage() {
   const [pizzas, setPizzas] = useState([]);
   const [selectedPizza, setSelectedPizza] = useState(null);
   const [showCustomizePopup, setShowCustomizePopup] = useState(false);
@@ -40,7 +40,7 @@ function Main() {
   // Filter pizzas by veg or non-veg
   const filteredPizzas = showVegOnly
     ? sortedPizzas.filter((pizza) => pizza.isVeg)
-    : sortedPizzas;
+    : sortedPizzas.filter((pizza) => !pizza.isVeg);
 
   // Handle selecting a pizza and showing the customize popup
   const handleSelectPizza = (pizza) => {
@@ -108,4 +108,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default MainPage;
