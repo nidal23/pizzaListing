@@ -3,8 +3,8 @@ import axios from "axios";
 import Emoji from "./Emoji";
 import PizzaCard from "./PizzaCard";
 import SortingDropDown from "./SortingDropDown";
-import CustomizePopup from "./CustomizePopup";
-import Toppings from "./Toppings";
+
+
 
 function MainPage() {
   const [pizzas, setPizzas] = useState([]);
@@ -42,32 +42,13 @@ function MainPage() {
     ? sortedPizzas.filter((pizza) => pizza.isVeg)
     : sortedPizzas.filter((pizza) => !pizza.isVeg);
 
-  // Handle selecting a pizza and showing the customize popup
+  // Handle selecting a pizza
   const handleSelectPizza = (pizza) => {
     setSelectedPizza(pizza);
     setSelectedSize("");
     setSelectedToppings([]);
     setQuantity(1);
     setShowCustomizePopup(true);
-  };
-
-  // Handle adding the customized pizza to the cart
-  const handleAddToCart = () => {
-    const cartItem = {
-      id: selectedPizza.id,
-      name: selectedPizza.name,
-      description: selectedPizza.description,
-      isVeg: selectedPizza.isVeg,
-      rating: selectedPizza.rating,
-      price: selectedPizza.price,
-      img_url: selectedPizza.img_url,
-      size: selectedSize,
-      toppings: selectedToppings,
-      quantity: quantity,
-    };
-    // Add cart item to cart
-    console.log(cartItem);
-    setShowCustomizePopup(false);
   };
 
   return (

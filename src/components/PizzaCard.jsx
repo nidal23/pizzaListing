@@ -4,9 +4,7 @@ import CustomizePopup from "./CustomizePopup";
 
 function PizzaCard({ pizza, onSelectPizza }) {
   const [showCustomizePopup, setShowCustomizePopup] = useState(false);
-  const handleSelectPizza = () => {
-    onSelectPizza(pizza);
-  };
+
   const handleCustomizeClick = () => {
     setShowCustomizePopup(true);
   };
